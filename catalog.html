@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Каталог – CompTech</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #0e0e10;
+      color: #f0f0f0;
+    }
+    header {
+      background-color: #121217;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 2px solid #00b7ff;
+    }
+    header h1 { color: #00b7ff; margin: 0; }
+
+    nav a {
+      margin: 0 15px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    nav a:hover { color: #00b7ff; }
+
+    .container {
+      width: 90%;
+      margin: 30px auto;
+    }
+
+    .category {
+      margin-bottom: 40px;
+    }
+    .category h2 {
+      border-left: 5px solid #00b7ff;
+      padding-left: 10px;
+      color: #00b7ff;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .product-card {
+      background-color: #18181c;
+      border: 1px solid #2e2e35;
+      border-radius: 10px;
+      text-align: center;
+      padding: 15px;
+      transition: transform 0.2s, border 0.2s;
+    }
+    .product-card:hover {
+      transform: scale(1.03);
+      border-color: #00b7ff;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .product-card h3 {
+      color: #fff;
+      margin: 10px 0 5px;
+    }
+
+    .product-card p { color: #ccc; font-size: 0.9em; }
+    .product-card .price { color: #00b7ff; font-weight: bold; margin: 10px 0; }
+
+    .buy-btn {
+      background-color: #00b7ff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .buy-btn:hover { background-color: #0093d0; }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid #2e2e35;
+      margin-top: 40px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Каталог товарів</h1>
+    <nav>
+      <a href="index.html">Головна</a>
+      <a href="catalog.html">Каталог</a>
+      <a href="cart.html">Кошик</a>
+      <a href="about.html">Про нас</a>
+      <a href="contacts.html">Контакти</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <!-- Відеокарти -->
+    <div class="category">
+      <h2>Відеокарти</h2>
+      <div class="products">
+        <div class="product-card">
+          <img src="img/gpu.jpg" alt="ASUS RTX 4070">
+          <h3>ASUS GeForce RTX 4070</h3>
+          <p>12 ГБ GDDR6X, PCI-E 4.0</p>
+          <div class="price">₴29 999</div>
+          <button class="buy-btn" onclick="addToCart('ASUS GeForce RTX 4070', 29999)">Додати в кошик</button>
+        </div>
+
+        <div class="product-card">
+          <img src="img/gigabyte_gpu.jpg" alt="Gigabyte RTX 4060 Ti">
+          <h3>Gigabyte RTX 4060 Ti</h3>
+          <p>8 ГБ GDDR6, DLSS 3.0</p>
+          <div class="price">₴23 499</div>
+          <button class="buy-btn" onclick="addToCart('Gigabyte RTX 4060 Ti', 23499)">Додати в кошик</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Процесори -->
+    <div class="category">
+      <h2>Процесори</h2>
+      <div class="products">
+        <div class="product-card">
+          <img src="img/intel_i7.jpg" alt="Intel i7">
+          <h3>Intel Core i7-13700K</h3>
+          <p>16 ядер, 24 потоки, 5.4 ГГц</p>
+          <div class="price">₴17 899</div>
+          <button class="buy-btn" onclick="addToCart('Intel Core i7-13700K', 17899)">Додати в кошик</button>
+        </div>
+
+        <div class="product-card">
+          <img src="img/ryzen7.jpg" alt="AMD Ryzen 7">
+          <h3>AMD Ryzen 7 7800X3D</h3>
+          <p>8 ядер, 16 потоків, 3D V-Cache</p>
+          <div class="price">₴16 599</div>
+          <button class="buy-btn" onclick="addToCart('AMD Ryzen 7 7800X3D', 16599)">Додати в кошик</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>© 2025 CompTech. Усі права захищено.</footer>
+
+  <script>
+    function addToCart(name, price) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      let existing = cart.find(item => item.name === name);
+      if (existing) {
+        existing.qty++;
+      } else {
+        cart.push({ name, price, qty: 1 });
+      }
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert("✅ Товар додано до кошика!");
+    }
+  </script>
+
+</body>
+</html>

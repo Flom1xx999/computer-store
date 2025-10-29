@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Про нас – CompTech</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #0e0e10;
+      color: #f0f0f0;
+    }
+
+    header {
+      background-color: #121217;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 2px solid #00b7ff;
+    }
+
+    header h1 { color: #00b7ff; margin: 0; }
+
+    nav a {
+      margin: 0 15px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    nav a:hover { color: #00b7ff; }
+
+    .about-container {
+      width: 85%;
+      margin: 50px auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .about-text {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .about-text h2 {
+      color: #00b7ff;
+      font-size: 2em;
+      margin-bottom: 15px;
+    }
+
+    .about-text p {
+      color: #ccc;
+      line-height: 1.6em;
+      margin-bottom: 20px;
+    }
+
+    .about-text .highlight {
+      color: #00b7ff;
+      font-weight: 600;
+    }
+
+    .about-image {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .about-image img {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 0 20px #00b7ff40;
+    }
+
+    .team-section {
+      width: 85%;
+      margin: 60px auto;
+      text-align: center;
+    }
+
+    .team-section h2 {
+      color: #00b7ff;
+      margin-bottom: 20px;
+    }
+
+    .team-members {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .member-card {
+      background: #18181c;
+      border: 1px solid #2e2e35;
+      border-radius: 10px;
+      width: 250px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .member-card:hover {
+      transform: translateY(-5px);
+      border-color: #00b7ff;
+    }
+
+    .member-card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      border: 2px solid #00b7ff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid #2e2e35;
+      margin-top: 40px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Про нас</h1>
+    <nav>
+      <a href="index.html">Головна</a>
+      <a href="catalog.html">Каталог</a>
+      <a href="cart.html">Кошик</a>
+      <a href="about.html">Про нас</a>
+      <a href="contacts.html">Контакти</a>
+    </nav>
+  </header>
+
+  <div class="about-container">
+    <div class="about-text">
+      <h2>Ласкаво просимо до <span class="highlight">CompTech</span></h2>
+      <p>Ми — команда ентузіастів комп’ютерних технологій, яка понад 5 років допомагає людям обирати найкращі комплектуючі для ігор, роботи та творчості.</p>
+      <p>У нашому каталозі ви знайдете лише <span class="highlight">перевірені бренди</span> — ASUS, MSI, Intel, AMD, Kingston, Corsair та інші.</p>
+      <p>Ми прагнемо зробити покупку комп’ютерної техніки простою, зручною і приємною.</p>
+    </div>
+
+    <div class="about-image">
+      <img src="img/about_team.jpg" alt="Наша команда">
+    </div>
+  </div>
+
+  <div class="team-section">
+    <h2>Наша команда</h2>
+    <div class="team-members">
+      <div class="member-card">
+        <img src="img/member1.jpg" alt="Олександр">
+        <h3>Олександр</h3>
+        <p>Засновник і технічний експерт</p>
+      </div>
+      <div class="member-card">
+        <img src="img/member2.jpg" alt="Марія">
+        <h3>Марія</h3>
+        <p>Менеджер з продажів</p>
+      </div>
+      <div class="member-card">
+        <img src="img/member3.jpg" alt="Ігор">
+        <h3>Ігор</h3>
+        <p>Фахівець з підтримки клієнтів</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>© 2025 CompTech. Усі права захищено.</footer>
+
+</body>
+</html>

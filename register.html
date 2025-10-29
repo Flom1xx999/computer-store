@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Реєстрація – CompTech</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #0e0e10;
+      color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #121217;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 2px solid #00b7ff;
+    }
+
+    header h1 { color: #00b7ff; margin: 0; }
+
+    nav a {
+      margin: 0 15px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    nav a:hover { color: #00b7ff; }
+
+    .register-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+    }
+
+    .register-box {
+      background: #18181c;
+      border: 1px solid #2e2e35;
+      border-radius: 15px;
+      padding: 40px;
+      width: 400px;
+      box-shadow: 0 0 20px #00b7ff40;
+    }
+
+    .register-box h2 {
+      color: #00b7ff;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .register-box form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .register-box label {
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+
+    .register-box input {
+      padding: 10px;
+      border: 1px solid #2e2e35;
+      border-radius: 8px;
+      background-color: #0e0e10;
+      color: #f0f0f0;
+      font-size: 1em;
+      transition: border-color 0.3s;
+    }
+
+    .register-box input:focus {
+      outline: none;
+      border-color: #00b7ff;
+    }
+
+    .register-box button {
+      background-color: #00b7ff;
+      color: #fff;
+      border: none;
+      padding: 12px;
+      font-size: 1em;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .register-box button:hover {
+      background-color: #0095d9;
+    }
+
+    .register-box p {
+      text-align: center;
+      color: #ccc;
+    }
+
+    .register-box a {
+      color: #00b7ff;
+      text-decoration: none;
+    }
+
+    .register-box a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid #2e2e35;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>CompTech</h1>
+    <nav>
+      <a href="index.html">Головна</a>
+      <a href="catalog.html">Каталог</a>
+      <a href="cart.html">Кошик</a>
+      <a href="about.html">Про нас</a>
+      <a href="contacts.html">Контакти</a>
+      <a href="register.html">Реєстрація</a>
+    </nav>
+  </header>
+
+  <div class="register-container">
+    <div class="register-box">
+      <h2>Створити акаунт</h2>
+      <form id="registerForm">
+        <div>
+          <label for="username">Ім'я користувача</label>
+          <input type="text" id="username" name="username" required>
+        </div>
+
+        <div>
+          <label for="email">Електронна пошта</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div>
+          <label for="password">Пароль</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+
+        <div>
+          <label for="confirmPassword">Підтвердіть пароль</label>
+          <input type="password" id="confirmPassword" name="confirmPassword" required>
+        </div>
+
+        <button type="submit">Зареєструватися</button>
+      </form>
+
+      <p>Вже маєте акаунт? <a href="#">Увійти</a></p>
+    </div>
+  </div>
+
+  <footer>© 2025 CompTech. Усі права захищено.</footer>
+
+  <script>
+    const form = document.getElementById('registerForm');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const username = form.username.value;
+      const email = form.email.value;
+      alert(`Дякуємо, ${username}! Ви успішно зареєструвалися з email: ${email}`);
+      form.reset();
+    });
+  </script>
+</body>
+</html>

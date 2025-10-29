@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Кошик – CompTech</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; background: #0e0e10; color: #fff; margin: 0; }
+    header { background: #121217; padding: 20px; text-align: center; border-bottom: 2px solid #00b7ff; }
+    nav a { color: #fff; margin: 0 15px; text-decoration: none; }
+    nav a:hover { color: #00b7ff; }
+    .container { width: 90%; margin: 30px auto; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 12px; border-bottom: 1px solid #2e2e35; text-align: left; }
+    th { color: #00b7ff; }
+    .total { text-align: right; margin-top: 20px; font-size: 1.2em; }
+    button { background: #00b7ff; border: none; padding: 10px 15px; color: #fff; border-radius: 5px; cursor: pointer; }
+    button:hover { background: #0093d0; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Кошик</h1>
+    <nav>
+      <a href="index.html">Головна</a>
+      <a href="catalog.html">Каталог</a>
+      <a href="cart.html">Кошик</a>
+      <a href="about.html">Про нас</a>
+      <a href="contacts.html">Контакти</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <table id="cartTable">
+      <thead>
+        <tr><th>Товар</th><th>Ціна</th><th>Кількість</th><th>Видалити</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <div class="total">
+      Всього: <span id="totalPrice">₴0</span>
+    </div>
+  </div>
+
+  <script>
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    function updateCart() {
+      const tbody = document.querySelector("#cartTable tbody");
+      tbody.innerHTML = "";
+      let total = 0;
+
+      cart.forEach((item, index) => {
+        total += item.price * item.qty;
+        tbody.innerHTML += `
+          <tr>
+            <td>${item.name}</td>
+            <td>₴${item.price}</td>
+            <td>${item.qty}</td>
+            <td><button onclick="removeItem(${index})">✖</button></td>
+          </tr>
+        `;
+      });
+
+      document.getElementById("totalPrice").textContent = "₴" + total;
+    }
+
+    function removeItem(index) {
+      cart.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      updateCart();
+    }
+
+    updateCart();
+  </script>
+</body>
+</html>

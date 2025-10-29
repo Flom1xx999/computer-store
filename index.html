@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CompTech – Магазин комп'ютерної техніки</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0e0e10;
+      color: #f0f0f0;
+    }
+
+    header {
+      background-color: #121217;
+      padding: 20px 0;
+      text-align: center;
+      border-bottom: 2px solid #00b7ff;
+    }
+
+    header h1 {
+      margin: 0;
+      color: #00b7ff;
+      font-size: 2em;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      margin: 0 12px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00b7ff;
+    }
+
+    .register-link {
+      background-color: #00b7ff;
+      color: #fff !important;
+      padding: 8px 14px;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+
+    .register-link:hover {
+      background-color: #0095d9;
+    }
+
+    .login-link {
+      background-color: #2e2e35;
+      color: #fff !important;
+      padding: 8px 14px;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+
+    .login-link:hover {
+      background-color: #3a3a42;
+    }
+
+    .hero {
+      background: url('img/hero_pc.jpg') no-repeat center/cover;
+      height: 60vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      color: #fff;
+      box-shadow: inset 0 0 200px rgba(0,0,0,0.6);
+    }
+
+    .hero h2 {
+      font-size: 2.8em;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      color: #ccc;
+      max-width: 600px;
+    }
+
+    .cta-btn {
+      margin-top: 20px;
+      background-color: #00b7ff;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .cta-btn:hover {
+      background-color: #0095d9;
+    }
+
+    .features {
+      width: 85%;
+      margin: 60px auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .feature {
+      background: #18181c;
+      border: 1px solid #2e2e35;
+      border-radius: 15px;
+      padding: 25px;
+      width: 280px;
+      text-align: center;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+
+    .feature:hover {
+      transform: translateY(-5px);
+      border-color: #00b7ff;
+    }
+
+    .feature h3 {
+      color: #00b7ff;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid #2e2e35;
+      color: #888;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>CompTech</h1>
+    <nav>
+      <a href="index.html">Головна</a>
+      <a href="catalog.html">Каталог</a>
+      <a href="cart.html">Кошик</a>
+      <a href="about.html">Про нас</a>
+      <a href="contacts.html">Контакти</a>
+      <a href="login.html" class="login-link">Вхід</a>
+      <a href="register.html" class="register-link">Реєстрація</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Комп’ютерні комплектуючі нового покоління</h2>
+    <p>Обирай якість, швидкість і потужність — збери ПК своєї мрії разом із CompTech.</p>
+    <button class="cta-btn" onclick="window.location.href='catalog.html'">Переглянути каталог</button>
+  </section>
+
+  <section class="features">
+    <div class="feature">
+      <h3>⚡ Висока продуктивність</h3>
+      <p>Ми пропонуємо тільки найсучасніші процесори, відеокарти та SSD-диски.</p>
+    </div>
+    <div class="feature">
+      <h3>🛡️ Надійна якість</h3>
+      <p>Усі товари — лише офіційні, з гарантією від виробника до 3 років.</p>
+    </div>
+    <div class="feature">
+      <h3>🚀 Швидка доставка</h3>
+      <p>Доставляємо по всій Україні в найкоротші терміни через Нову Пошту.</p>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 CompTech. Усі права захищено.
+  </footer>
+
+</body>
+</html>
